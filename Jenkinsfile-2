@@ -3,28 +3,42 @@ pipeline
   agent any
   stages
   {
-    stage('Hello')
-    {
+    stage('Build')
+	{
       steps
-      {
-        echo 'Hello World!'
+	  {
+        echo 'Building...'
       }
-      post 
-      {
+	}
+	stage('Test')
+	{
+      steps
+	  {
+        echo 'Testing...'
+      }
+	}
+	stage('Deploy')
+	{
+      steps
+	  {
+        echo 'Deploying...'
+      }
+	}
+      post
+	  {
         success
-        {
+		{
           script
-          {
+		  {
             currentBuild.result = 'FAILURE'
           }
         }
       }
-    }
   }
   post
   {
     always
-    {
+	{
       echo currentBuild.currentResult
     }
   }
