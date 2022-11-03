@@ -23,7 +23,7 @@ pipeline
 	  {
         echo 'Deploying...'
       }
-	}
+
       post
 	  {
         success
@@ -34,6 +34,7 @@ pipeline
           }
         }
       }
+    }
   }
   post
   {
