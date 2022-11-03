@@ -30,7 +30,7 @@ pipeline
 		{
           script
 		  {
-            currentBuild.result = 'FAILURE'
+            //currentBuild.result = 'FAILURE'
           }
         }
       }
