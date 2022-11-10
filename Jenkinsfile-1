@@ -15,7 +15,7 @@ pipeline
         
             	// checkout sources
 	    checkout([$class: 'GitSCM',
-	               branches: [[name: '*/mybranch']],
+	               branches: [[name: '*/main']],
 		       doGenerateSubmoduleConfigurations: false,
 		       extensions: [],
 		       submoduleCfg: [],
