@@ -5,6 +5,7 @@ pipeline
   {
     stage('Build')
 	{
+	 steps{
         echo 'Building...'
         	// acquiering an extra workspace seems to be necessary to prevent interaction between
         	// the parallel run nodes, although node() should already create an own workspace.
@@ -25,14 +26,14 @@ pipeline
             //runCommand( 'cmake --build _build ' + params.AdditionalBuildArguments )
             
             echo '----- CMake project was build successfully -----'
-
+    }
     }
 	stage('Test')
 	{
-      steps
-	  {
-        echo 'Testing...'
-      }
+	      steps
+		  {
+		echo 'Testing...'
+	      }
 	}
 	stage('Deploy')
 	{
