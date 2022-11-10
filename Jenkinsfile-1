@@ -14,10 +14,12 @@ pipeline
             	//printJobParameter()
         
             	// checkout sources
-				checkout([$class: 'GitSCM',
-                	userRemoteConfigs: [[url: params.RepositoryUrl]],
-                	branches: [[name: 'main']],
-                	extensions: [[$class: 'CleanBeforeCheckout']]]
+	    checkout([$class: 'GitSCM',
+	               branches: [[name: '*/mybranch']],
+		       doGenerateSubmoduleConfigurations: false,
+		       extensions: [],
+		       submoduleCfg: [],
+		       userRemoteConfigs: [[credentialsId: 'myCredentials', url: 'https://github.com/AliFARESS/currentBuild.git']]])
             )
        
             // run cmake generate and build
