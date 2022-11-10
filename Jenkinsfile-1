@@ -1,11 +1,48 @@
-pipeline {
+pipeline
+{
   agent any
-  stages {
-    stage('Hello') {
-      steps {
-        echo 'Hello World!'
-        echo "Build number is ${currentBuild.number}"
+  stages
+  {
+    stage('Build')
+	{
+        echo 'Building...'
+        	// acquiering an extra workspace seems to be necessary to prevent interaction between
+        	// the parallel run nodes, although node() should already create an own workspace.
+  
+            	// debug info
+            	//printJobParameter()
+        
+            	// checkout sources
+				checkout([$class: 'GitSCM',
+                	userRemoteConfigs: [[url: params.RepositoryUrl]],
+                	branches: [[name: 'main']],
+                	extensions: [[$class: 'CleanBeforeCheckout']]]
+            )
+       
+            // run cmake generate and build
+            //runCommand( 'cmake -E remove_directory _build')                             // make sure the build is clean
+            //runCommand( 'cmake -H. -B_build ' + params.AdditionalGenerateArguments )
+            //runCommand( 'cmake --build _build ' + params.AdditionalBuildArguments )
+            
+            echo '----- CMake project was build successfully -----'
+
+    }
+	stage('Test')
+	{
+      steps
+	  {
+        echo 'Testing...'
       }
+	}
+	stage('Deploy')
+	{
+      steps
+	  {
+        echo 'Deploying...'
+      }
+
     }
   }
+
 }
+
