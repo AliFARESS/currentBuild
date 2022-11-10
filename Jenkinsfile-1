@@ -19,7 +19,7 @@ pipeline
 		       doGenerateSubmoduleConfigurations: false,
 		       extensions: [],
 		       submoduleCfg: [],
-		       userRemoteConfigs: [[credentialsId: 'myCredentials', url: 'https://github.com/AliFARESS/currentBuild.git']]])
+		       userRemoteConfigs: [[credentialsId: 'myCredentials', url: 'https://github.com/AliFARESS/currentBuild.git']]]
             )
        
             // run cmake generate and build
