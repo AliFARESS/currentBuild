@@ -4,8 +4,8 @@ pipeline
   stages
   {
     stage('Build')
-	{
-	 steps{
+    {
+      steps{
         echo 'Building...'
         	// acquiering an extra workspace seems to be necessary to prevent interaction between
         	// the parallel run nodes, although node() should already create an own workspace.
@@ -31,7 +31,7 @@ pipeline
 	    cmake -B /build -DCMAKE_TOOLCHAIN_FILE=x86-64-Windows.cmake ..
             
             echo '----- CMake project was build successfully -----'
-    }
+      }
     }
 	stage('Test')
 	{
