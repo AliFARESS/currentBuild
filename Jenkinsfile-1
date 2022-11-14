@@ -30,7 +30,7 @@ pipeline
 	    //cmakeBuild(installation: 'InSearchPath')
 	    cmake -B /build -DCMAKE_TOOLCHAIN_FILE=x86-64-Windows.cmake ..
             
-            echo '----- CMake project was build successfully -----'
+            //echo '----- CMake project was build successfully -----'
       }
     }
 	stage('Test')
