@@ -28,7 +28,7 @@ pipeline
             //runCommand( 'cmake --build _build ' + params.AdditionalBuildArguments )
 	    
 	    //cmakeBuild(installation: 'InSearchPath')
-	    cmake -DCMAKE_TOOLCHAIN_FILE = cmake/Toolchain/x86-32-Windows.cmake
+	    cmake --build
             
             echo '----- CMake project was build successfully -----'
       }
