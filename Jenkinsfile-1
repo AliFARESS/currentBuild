@@ -27,7 +27,8 @@ pipeline
             //runCommand( 'cmake -H. -B_build ' + params.AdditionalGenerateArguments )
             //runCommand( 'cmake --build _build ' + params.AdditionalBuildArguments )
 	    
-	    cmakeBuild(installation: 'InSearchPath')
+	    //cmakeBuild(installation: 'InSearchPath')
+	    cmake -B build -DCMAKE_BUILD_TYPE=%1 -DCMAKE_TOOLCHAIN_FILE=x86-64-Windows.cmake
             
             echo '----- CMake project was build successfully -----'
     }
