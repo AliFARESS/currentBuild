@@ -54,7 +54,9 @@ pipeline
 	            cleanBuild: true,
 	            generator: 'MinGW Makefiles',
 		    installation: 'InSearchPath',
-		    sourceDir: 'src')
+		    sourceDir: 'src'
+		steps: [
+                       [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts'])
 	    }
     }
 	stage('Test')
