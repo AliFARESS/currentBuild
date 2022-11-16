@@ -56,7 +56,7 @@ pipeline
 		    installation: 'InSearchPath',
 		    sourceDir: 'src'
 		steps: [
-                       [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts'])
+                       [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']])
 	    }
     }
 	stage('Test')
