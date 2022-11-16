@@ -36,23 +36,10 @@ pipeline
   stage('Cmake')
     {
 	    steps{
-	    echo 'cmake...'
-	    cmake {
-		    //cmakeInstallation('InSearchPath')
-		    generator('MinGW Makefiles')
-		    //cleanBuild()
-		    //sourceDir('src')
-		    buildDir('target')
-		    //args('foo')
-		    //args('bar')
-		    buildToolStep {
-			vars('KEY', 'VALUE')
-			useCmake()
-		    }
-		    buildToolStep {
-			useCmake(false)
-		    }
-		}    
+	    	echo 'cmake...'
+		script {
+		   bat "build.bat"
+		       }   
 	    }
     }
 	stage('Test')
