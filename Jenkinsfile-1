@@ -38,7 +38,7 @@ pipeline
 	    steps{
 	    echo 'cmake...'
 	    cmake {
-		    cmakeInstallation('InSearchPath')
+		    //cmakeInstallation('InSearchPath')
 		    generator('MinGW Makefiles')
 		    //cleanBuild()
 		    //sourceDir('src')
