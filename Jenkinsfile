@@ -49,8 +49,7 @@ pipeline
          			 //[args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
       			       //]
 		cmakeBuild(
-	  		buildDir: 'Debug',
-	  		buildType: 'Debug',
+	    		buildType: 'Debug',
 	  		cleanBuild: true,
 	  		installation: 'InSearchPath',
 	  		sourceDir: 'src',
