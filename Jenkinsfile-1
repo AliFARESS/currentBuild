@@ -28,6 +28,20 @@ pipeline
             //runCommand( 'cmake --build _build ' + params.AdditionalBuildArguments )
 	    
 	    //cmakeBuild(installation: 'InSearchPath')
+	    cmakeInstallation('InSearchPath')
+            generator('MinGW Makefiles')
+            //cleanBuild()
+            //sourceDir('src')
+            buildDir('target')
+            //args('foo')
+            //args('bar')
+            buildToolStep {
+                vars('KEY', 'VALUE')
+                useCmake()
+            }
+            buildToolStep {
+                useCmake(false)
+            }
 
             
             echo '----- CMake project was build successfully -----'
