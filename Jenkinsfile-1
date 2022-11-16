@@ -32,6 +32,9 @@ pipeline
             echo '----- CMake project was build successfully -----'
       }
     }
+  }
+  stage('Cmake')
+    {
 	    steps{
 	    echo 'cmake...'
 	    cmake {
@@ -51,7 +54,7 @@ pipeline
 		    }
 		}    
 	    }
-	}
+      }
 	stage('Test')
 	{
 	      steps
