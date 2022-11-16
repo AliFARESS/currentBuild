@@ -51,7 +51,7 @@ pipeline
 		//cmake(-G -D"CMAKE_MAKE_PROGRAM:PATH=cmake/Toolchain/mingw32-make.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT=TRUE -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8 ../src',
 	  			//installation: 'InSearchPath')
 		//cmakeBuild( buildDir: 'debug', cleanBuild: true, generator: 'MinGW Makefiles', installation: 'InSearchPath', sourceDir: 'src', steps: [[args: '-G "Eclipse CDT4 - MinGW Makefiles" -D"CMAKE_MAKE_PROGRAM:PATH=cmake/Toolchain/mingw32-make.exe -j8', withCmake: true]])
-	    cmake arguments: '-G "MinGW Makefiles" -DCMAKE_MAKE_PROGRAM=C:\\tools\\i686-12.2.0-release-posix-dwarf-rt_v10-rev1\\mingw32\\bin\\mingw32-make.exe', installation: 'InSearchPath', workingDir: 'debug'
+		cmake arguments: '-G "MinGW Makefiles" -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain/x86-64-Windows.cmake', installation: 'InSearchPath', workingDir: 'debug'
 	    }
     }
 	stage('Test')
