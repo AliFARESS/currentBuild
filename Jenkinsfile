@@ -37,9 +37,17 @@ pipeline
     {
 	    steps{
 	    	echo 'cmake...'
-		script {
-		   bat "build.bat"
-		       }   
+		//script {
+		   //bat "build.bat"
+		       //}
+		cmakeBuild
+      			generator: 'Ninja',
+      			buildDir: 'build',
+      			sourceDir: 'source',
+      			installation: 'InSearchPath',
+      			steps: [
+         			 [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
+      			       ]
 	    }
     }
 	stage('Test')
