@@ -28,7 +28,7 @@ pipeline
             //runCommand( 'cmake --build _build ' + params.AdditionalBuildArguments )
 	    
 	    //cmakeBuild(installation: 'InSearchPath')
-	    cmake --build
+
             
             echo '----- CMake project was build successfully -----'
       }
