@@ -50,7 +50,7 @@ pipeline
       			       //]
 		//cmake(-G -D"CMAKE_MAKE_PROGRAM:PATH=cmake/Toolchain/mingw32-make.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_GENERATE_SOURCE_PROJECT=TRUE -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8 ../src',
 	  			installation: 'InSearchPath')
-		    cmake -G -cmake/Toolchain/mingw32-make.exe -j8', installation: 'InSearchPath
+		    cmake -G -cmake/Toolchain/mingw32-make.exe -j8 installation: InSearchPath
 	    }
     }
 	stage('Test')
