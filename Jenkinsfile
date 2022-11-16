@@ -48,13 +48,13 @@ pipeline
       			//steps: [
          			 //[args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
       			       //]
-		cmakeBuild
+		cmakeBuild(
 		    buildDir: 'debug',
 	            buildType: 'Debug',
 	            cleanBuild: true,
 	            generator: 'MinGW Makefiles',
 		    installation: 'InSearchPath',
-		    sourceDir: 'src'
+		    sourceDir: 'src')
 	    }
     }
 	stage('Test')
