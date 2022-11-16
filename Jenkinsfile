@@ -40,14 +40,21 @@ pipeline
 		//script {
 		   //bat "build.bat"
 		       //}
+		//cmakeBuild
+      			//generator: 'Ninja',
+      			//buildDir: 'build',
+      			//sourceDir: 'source',
+      			//installation: 'InSearchPath',
+      			//steps: [
+         			 //[args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
+      			       //]
 		cmakeBuild
-      			generator: 'Ninja',
-      			buildDir: 'build',
-      			sourceDir: 'source',
-      			installation: 'InSearchPath',
-      			steps: [
-         			 [args: 'all install', envVars: 'DESTDIR=${WORKSPACE}/artifacts']
-      			       ]
+		    buildDir: 'debug',
+	            buildType: 'Debug',
+	            cleanBuild: true,
+	            generator: 'MinGW Makefiles',
+		    installation: 'InSearchPath',
+		    sourceDir: 'src'
 	    }
     }
 	stage('Test')
