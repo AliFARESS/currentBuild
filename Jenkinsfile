@@ -37,9 +37,9 @@ pipeline
     {
 	    steps{
 	    	echo 'cmake...'
-		script {
-		   bat "build.bat"
-		       }
+		//script {
+		   //bat "build.bat"
+		       //}
 		//cmakeBuild
       			//generator: 'Ninja',
       			//buildDir: 'build',
