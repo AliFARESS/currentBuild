@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 2.8 )
-set(CMAKE_BUILD_TYPE Release)
-project (ex1)
+cmake_minimum_required (VERSION 2.6)
+
+project (hello_world)
 add_subdirectory(src)
