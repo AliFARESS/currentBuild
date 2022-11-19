@@ -7,7 +7,7 @@ stages{
         steps {
             script{
                 git credentialsId: '0a7a-4722-b4d1-55da716305db', url: 'https://github.com/AliFARESS/currentBuild.git'
-                git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt
+               bat 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt'
             }
 
         }
@@ -29,7 +29,7 @@ stages{
         steps{
             echo "${env.BRANCH_SCOPE}"
             git  credentialsId: 'd3b9bada-0a7a-4722-b4d1-55da716305db', url: 'https://github.com/AliFARESS/currentBuild.git'
-            git checkout -b build ${env.BRANCH_NAME}
+           bat "git checkout -b build ${env.BRANCH_NAME}"
         
     }
   }
