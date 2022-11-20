@@ -1,11 +1,16 @@
 pipeline{
 agent any
+parameters {
+        gitParameter name: 'BRANCH',
+                     type: 'PT_BRANCH',
+                     defaultValue: 'main'
+    }
 
 stages{
 
-    stage('checkout scm') {
-        steps {
-            script{
+		stage('checkout scm') {
+			steps {
+				script{
                 git credentialsId: '0a7a-4722-b4d1-55da716305db', url: 'https://github.com/AliFARESS/currentBuild.git'
                bat 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt'
             }
