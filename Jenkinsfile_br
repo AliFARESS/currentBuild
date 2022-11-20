@@ -1,11 +1,5 @@
 pipeline{
 agent any
-parameters {
-        gitParameter name: 'BRANCH',
-                     type: 'PT_BRANCH',
-                     defaultValue: 'main'
-    }
-
 stages{
 
 		stage('checkout scm') {
