@@ -8,7 +8,7 @@ pipeline
         steps {
             script{
                 git credentialsId: 'd3b9bada-0a7a-4722-b4d1-55da716305db', url: 'https://github.com/AliFARESS/currentBuild.git'
-                bat 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt'
+                bat git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt
             }
 
          }
