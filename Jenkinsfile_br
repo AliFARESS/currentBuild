@@ -7,7 +7,7 @@ pipeline
       stage('checkout scm') {
         steps {
             script{
-                git credentialsId: '8bd8-419d-8af0-30960441fcd7', url: 'ssh://jenkins@git.company.com:/usr/company/repositories/repo.git'
+                git credentialsId: 'd3b9bada-0a7a-4722-b4d1-55da716305db', url: 'https://github.com/AliFARESS/currentBuild.git'
                 bat 'git branch -r | awk \'{print $1}\' ORS=\'\\n\' >>branch.txt'
             }
 
