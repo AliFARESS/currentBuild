@@ -1,16 +1,13 @@
 pipeline
 {
- //agent { label 'CROSS-PLATFORM' }
-    agent {
-        node {
-            label 'CROSS-PLATFORM'
-        }
-    }
+    agent any
 	parameters {
         gitParameter name: 'BRANCH',
                      type: 'PT_BRANCH',
                      defaultValue: 'main'
     }
+  stages
+  {
     stage('Build')
     {
       steps{
@@ -79,5 +76,6 @@ pipeline
         echo 'Deploying...'
       }
     }
+  }
 }
 
