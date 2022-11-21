@@ -1,6 +1,7 @@
 pipeline
 {
     agent any
+    echo "please click on the link here to chose the branch to build"
     parameters {
 		gitParameter name: 'BRANCH', type: 'PT_BRANCH', defaultValue: 'main'}
 	
