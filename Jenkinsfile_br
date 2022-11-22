@@ -1,31 +1,24 @@
 pipeline
 {
     agent any
-  stages
-  {
-    stage('Choose '){
-       steps{
-    	echo "please click on the link here to choose the branch to build"
+
     	parameters {
 		gitParameter name: 'BRANCH', type: 'PT_BRANCH', defaultValue: 'main'
         }
-      }
-    }
-	
-
-    stage('get build branch Parameter User Input') {
+  stages
+  {
+    stage('branch to build') {
     
     	steps{
 	      script{
 
-		//echo "please click on the link here to choose the branch to build"
 		//env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!'
 		parameters: [choice(name: 'BRANCH', choices: "${BRANCH}", description: 'Branch to build?')]
-		
+		echo "${env.BRANCH}"
 	  }
 	}	
 	
-    }
+    
     stage('Build')
     {
       steps{
