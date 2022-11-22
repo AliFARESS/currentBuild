@@ -4,9 +4,12 @@ pipeline
   stages
   {
     stage('Choose '){
-    echo "please click on the link here to choose the branch to build"
-    parameters {
-		gitParameter name: 'BRANCH', type: 'PT_BRANCH', defaultValue: 'main'}
+       steps{
+    	echo "please click on the link here to choose the branch to build"
+    	parameters {
+		gitParameter name: 'BRANCH', type: 'PT_BRANCH', defaultValue: 'main'
+        }
+      }
     }
 	
 
