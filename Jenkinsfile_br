@@ -7,13 +7,14 @@ pipeline
         }
   stages
   {
-    stage('branch to build') {
+    stage('branch to build'){
     
     	steps{
+	  script{
 
 		//env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!'
 		parameters: [choice(name: 'BRANCH', choices: "${BRANCH}", description: 'Branch to build?')]
-		echo "${env.BRANCH}"
+		echo "${env.BRANCH}"}
 	}	
      }
     
