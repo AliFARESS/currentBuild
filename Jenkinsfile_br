@@ -32,7 +32,7 @@ pipeline
 		   bat "build.bat"
 		       }
 		
-	    }echo '----- CMake project was build successfully -----'
+	    }
     }
 	stage('Test')
 	{
