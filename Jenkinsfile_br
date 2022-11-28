@@ -11,12 +11,12 @@ pipeline
     
       steps{
 		echo "${env.BRANCH}"
-	   }	
+	   //}	
      //}
     
     //stage('Build')
     //{
-      steps{
+      //steps{
         echo 'Building...'
         
             	// checkout sources
