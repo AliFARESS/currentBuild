@@ -12,10 +12,10 @@ pipeline
       steps{
 		echo "${env.BRANCH}"
 	   }	
-     }
+     //}
     
-    stage('Build')
-    {
+    //stage('Build')
+    //{
       steps{
         echo 'Building...'
         
