@@ -10,21 +10,14 @@ pipeline
     stage('branch to build'){
     
       steps{
-		//env.BRANCH_SCOPE = input message: 'Please choose the branch to build ', ok: 'Validate!'
-		//parameters: [choice(name: 'BRANCH', choices: "${BRANCH}", description: 'Branch to build?')]
 		echo "${env.BRANCH}"
-	}	
+	   }	
      }
     
     stage('Build')
     {
       steps{
         echo 'Building...'
-        	// acquiering an extra workspace seems to be necessary to prevent interaction between
-        	// the parallel run nodes, although node() should already create an own workspace.
-  
-            	// debug info
-            	//printJobParameter()
         
             	// checkout sources
 	    checkout([$class: 'GitSCM',
